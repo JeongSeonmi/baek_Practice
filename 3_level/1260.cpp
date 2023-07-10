@@ -1,3 +1,6 @@
+/* DFS¿Í BFS */
+// https://www.acmicpc.net/problem/1260
+
 #include<iostream>
 #include<vector>
 #include<queue>

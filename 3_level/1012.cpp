@@ -1,3 +1,6 @@
+/* ¿Ø±‚≥Û πË√ﬂ */
+// https://www.acmicpc.net/problem/1012
+
 #include<iostream>
 using namespace std;
 

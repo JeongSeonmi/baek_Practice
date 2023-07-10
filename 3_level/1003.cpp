@@ -1,3 +1,6 @@
+/* 피보나치 함수 */
+// https://www.acmicpc.net/problem/1003
+
 #include <iostream>
 using namespace std;
 int d[41][2] = { {1,0},{0,1} };
