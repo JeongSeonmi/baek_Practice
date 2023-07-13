@@ -23,9 +23,9 @@ void dfs(int x){
     }
 }
 
-void bfs(int x){
-    visited[x] = true;
-    q.push(x);
+void bfs(int y){
+    visited[y] = true;
+    q.push(y);
     while(!q.empty()){
         int y = q.front();
         q.pop();
@@ -52,7 +52,7 @@ int main(){
     for(int i = 0; i < N; i++){
         sort(arr[i].begin(), arr[i].end());
     }
-
+    
     dfs(V);
 
     cout <<'\n';
@@ -60,5 +60,5 @@ int main(){
     for (int i = 1; i <= N; i++) {
         visited[i] = 0;
     }
-    bfs(V);
+    bfs(1);
 }
