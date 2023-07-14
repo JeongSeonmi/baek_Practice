@@ -1,3 +1,7 @@
+/* 계단 오르기 */
+// 23.07.14
+// https://www.acmicpc.net/problem/2579
+
 #include<iostream>
 #include<algorithm>
 #define MAX 10001

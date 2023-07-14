@@ -1,5 +1,5 @@
 /* 2xn ≈∏¿œ∏µ */
-// 23.07.24
+// 23.07.14
 // https://www.acmicpc.net/problem/11726
 
 #include<iostream>
