@@ -38,7 +38,7 @@ int main(){
         arr[ver2].push_back(ver1);
 
     }
-    for (int i = 1; i <= N; i++) //ºüÁü¾øÀÌ Å½»öÇÏ±â À§ÇØ
+    for (int i = 1; i <= N; i++)
     {
         if (visited[i] == 0)
         {
