@@ -36,7 +36,6 @@ int main(){
         cin >> ver1 >> ver2;
         arr[ver1].push_back(ver2);
         arr[ver2].push_back(ver1);
-
     }
     for (int i = 1; i <= N; i++)
     {
