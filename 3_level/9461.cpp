@@ -1,6 +1,7 @@
 // 파도반 수열
 // 23.07.17
 // https://www.acmicpc.net/problem/9461
+
 #include<iostream>
 using namespace std;
 long long int dp[101];  //범위 초과로  long long을 붙힘
