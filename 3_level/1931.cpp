@@ -18,7 +18,7 @@ int main(){
         meeting.push_back(make_pair(end, start));
     }
     
-    //sort(meeting.begin(), meeting.end());
+    sort(meeting.begin(), meeting.end());
 
     int time = 0;
     int cnt = 0;

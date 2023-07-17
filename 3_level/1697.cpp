@@ -24,16 +24,16 @@ int main(){
             cout << time << endl;
             break;
         }
-        if(N + 1 >= 0 && N + 1 < MAX && !visit[N + 1])
+        if(N + 1 < MAX && !visit[N + 1])
         {
             visit[N + 1] = true;
             q.push({N + 1, time + 1});
         }   
-        if(N -1 >= 0 && !visit[N - 1]){
+        if(N - 1 >= 0 && !visit[N - 1]){
             visit[N - 1] = true;
             q.push({N - 1, time + 1});
         }
-        if(2 * N >= 0 && 2 * N < MAX && !visit[2 * N]){
+        if(2 * N < MAX && !visit[2 * N]){
             visit[2 * N] = true;
             q.push({2 * N, time + 1});
         }
