@@ -1,3 +1,8 @@
+/* 구간 합 구하기 4 */
+// 23.07.18
+// https://www.acmicpc.net/problem/11659
+// 세그먼트 트리를 사용해 푼 문제
+
 #include<iostream>
 #include<vector>
 using namespace std;
