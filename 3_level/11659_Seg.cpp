@@ -4,13 +4,13 @@
 // 세그먼트 트리를 사용해 푼 문제
 
 #include<iostream>
-#include<vector>
 using namespace std;
 
+typedef long long ll;
 int num[100001];   
-vector <int> tree;
+int tree[400004];
 
-int init(int node, int start, int end){
+ll init(int node, int start, int end){
     if(start == end){
         tree[node] = num[start];
         return tree[node];
@@ -18,9 +18,10 @@ int init(int node, int start, int end){
     int mid = (start + end) / 2;
     tree[node] = init(node * 2, start, mid) + init(node * 2 + 1, mid + 1, end);
     return tree[node];
+    
 }
 
-int interval_sum(int node, int start, int end, int left, int right){
+ll interval_sum(int node, int start, int end, int left, int right){
     if(left > end || right < start){
         return 0;
     }
@@ -36,8 +37,9 @@ void update(int node, int start, int end, int index, int value){
         return;
     }
 
+    tree[node] += value;
+    
     if(start == end){
-        tree[node] = value;
         return;
     }
 
@@ -53,17 +55,16 @@ int main(){
 
     int N, M;
     cin >> N >> M;
-    for(int i = 1; i <= N; i++){
+    for(int i = 0; i < N; i++){
         cin >> num[i];
     }
     
-    tree.resize(N * 4);
-    init(1, 1, N);
+    init(1, 0, N-1);
 
     int Rbegin, Rend;
     for(int i = 0; i < M; i++){
         cin >> Rbegin >> Rend;
-        int sum = interval_sum(1, 1, N, Rbegin, Rend);
+        int sum = interval_sum(1, 0, N - 1, Rbegin - 1, Rend - 1);
         cout << sum << "\n";
     }
     return 0;
