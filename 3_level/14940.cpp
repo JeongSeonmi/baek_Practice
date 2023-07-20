@@ -1,3 +1,7 @@
+/* 쉬운 최단거리 */
+// 23.07.20
+// https://www.acmicpc.net/problem/14940
+
 #include<iostream>
 #include<queue>
 #define MAX 1001
