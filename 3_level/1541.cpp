@@ -2,35 +2,25 @@
 // 23.07.22
 // https://www.acmicpc.net/problem/1541
 
-#include<iostream>
-using namespace std;
+#include<stdio.h>
 
 int main(){
-    string num = "";
-    bool check = false;     //+ 일 때
-    int result = 0;
-    string str;
-    cin >> str;
-
-    for(int i = 0; i <= str.size(); i++){   //문자끝을 살피기 위해 <=
-        if(str[i] == '-' || str[i] == '+' || i == str.size()){
-            if(check){
-                result -= stoi(num);
-                num = "";   //이미 값을 넣어줬으므로 초기화
-            }
-            else{
-                result += stoi(num);
-                num = "";
-            }
+    char str;
+    int temp, num, check = 0;   //숫자 하나 저장, 누적결과 저장, 부호체크
+    for(scanf("%d", &num); scanf("%c", &str), str != 10;){      //개행(엔터) 문자(ASCII 값 10)가 아닐 때까지 반복
+        if(str == '-'){
+            check = 1;
         }
-        else{
-            num += str[i];
+        scanf("%d", &temp);
+        if(check == 1){ //- 부호라면 temp를 뺌
+            num -= temp;
         }
-
-        if (str[i] == '-')
-        {
-            check = true;
+        else{   //+ 부호라면 temp를 더함
+            num += temp;
         }
     }
-    cout << result;
+    printf("%d", num);
+    return 0;
 }
+
+//str != 10을 사용할 경우 코드가 간결해짐!
