@@ -1,3 +1,7 @@
+/* 후위 표기식 */
+// 23.07.23
+// https://www.acmicpc.net/problem/1918
+
 #include<iostream>
 #include<stack>
 using namespace std;
@@ -17,7 +21,7 @@ int main(){
             s.push(str[i]);     //스택에 '('저장
         }
         else if(str[i] == ')'){      
-            while(!s.empty() && s.top() != '(')   //저장해놨던 '('가 나올때 까지
+            while(!s.empty() && s.top() != '(')   
             {
                 result += s.top();     //스택의 연산자 값 저장
                 s.pop();
