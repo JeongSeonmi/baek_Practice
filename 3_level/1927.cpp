@@ -1,5 +1,5 @@
-/* 최소 힙 */
-// 23.07.21
+/* 최소 힙 */ 
+// 23.07.21 C언어로 다시 짜볼것
 // https://www.acmicpc.net/problem/1927
 
 #include<iostream>
