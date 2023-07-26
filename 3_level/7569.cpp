@@ -1,7 +1,3 @@
-/* ≈‰∏∂≈‰ */
-// 23.07.26
-// https://www.acmicpc.net/problem/7569
-
 #include <iostream>
 #include <queue>
 using namespace std;
@@ -11,13 +7,14 @@ int dz[6] = {1, -1, 0, 0, 0, 0};
 int dy[6] = {0, 0, 1, -1, 0, 0};
 int dx[6] = {0, 0, 0, 0, 1, -1};
 queue<pair<pair<int, int>, int>> ripen;
-int N, M, H;
+int N, M, H, day;
 
 void BFS() {
     while(!ripen.empty()){
         int curY = ripen.front().first.first;
         int curX = ripen.front().first.second;
         int curZ = ripen.front().second;
+        day = tomato[curZ][curY][curX];
         ripen.pop();
         for(int i = 0; i < 6; i++){
             int nextY = curY + dy[i];
@@ -31,7 +28,7 @@ void BFS() {
     }
 }
 
-int main() {
+int main(){
     cin >> M >> N >> H;
 
     for(int i = 0; i < H; i++){
@@ -47,17 +44,12 @@ int main() {
 
     BFS();
 
-    int day = 0;
     for(int i = 0; i < H; i++){
         for(int j = 0; j < N; j++){
             for(int k = 0; k < M; k++){
                 if(tomato[i][j][k] == 0){
                     cout << -1 << endl;
                     return 0;
-                }
-
-                if(day < tomato[i][j][k]){
-                    day = tomato[i][j][k];
                 }
             }
         }
