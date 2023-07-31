@@ -20,9 +20,9 @@ void BFS(int start){
         int cur = q.front();
         q.pop();
         for(int i = 0; i < arr[cur].size(); i++){ 
-            int next = arr[cur][i];
-            if(kevin[next] == 0){
-                kevin[next] = kevin[cur] + 1;
+            int next = arr[cur][i]; //현재 정점과 연결된 정점을 다음으로 설정
+            if(kevin[next] == 0){   //만약 거리를 구한 적(저장한 적)이 없으면
+                kevin[next] = kevin[cur] + 1;   
                 q.push(next);
             }
         }
@@ -35,7 +35,7 @@ int main(){
 
     for (int i = 0; i < M; i++){
         int me, fri;
-        cin >> me >> fri;
+        cin >> me >> fri;   //정점과 연결된 다른 정점
         arr[me].push_back(fri);
         arr[fri].push_back(me);
     }
@@ -45,17 +45,17 @@ int main(){
 
     for(int i = 1; i <= N; i++){
         for (int j = 1; j <= N; j++){
-            kevin[j] = 0;
+            kevin[j] = 0;   //거리를 저장할 배열 초기화
         }
-        BFS(i);
+        BFS(i); // 정점 순서대로 탐색하면서 거리를 구함 
         
-        int sum = 0;
+        int sum = 0;    
         for(int j = 1; j <= N; j++){
-            sum += kevin[j];
+            sum += kevin[j];    //해당하는 정점의 거리의 총합
         }
 
-        if(sum < minKevin){
-            minKevin = sum;
+        if(sum < minKevin){ //총합들을 비교하며 작은 총합이 있으면 해당 정점을 출력
+            minKevin = sum; 
             answer = i;
         }
     }
