@@ -55,14 +55,15 @@ void bfs(){
 }
 
 int main(){
+    ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+    cout.tie(NULL);
     int N;
     cin >> N;
 
     for(int i = 0; i < N; i++){
         cin >> start >> final;
-        for(int i = 0; i < 10000; i++){
-            visited[i] = false;
-        }
+        memset(visited, false, sizeof(visited));
         bfs();
     }
     return 0;
